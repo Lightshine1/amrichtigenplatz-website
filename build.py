@@ -24,8 +24,8 @@ LANGS = ["de", "en"]
 # ---------------------------------------------------------------- Texte
 T = {
  "de": {
-  "tagline": "Kleine, nützliche Apps für Mac, iPhone und iPad",
-  "hero_title": "Apps, die eine Sache richtig gut machen.",
+  "tagline": "Nützliche Apps für Mac, iPhone und iPad",
+  "hero_title": "Mit kleinen Apps eine große Hilfe",
   "hero_text": "Wir entwickeln übersichtliche Apps für Mac, iPhone und iPad – für den Alltag, für Musikerinnen und Musiker und für Kirchengemeinden. Ohne Werbung, ohne Abo-Zwang, mit Respekt vor deinen Daten.",
   "our_apps": "Unsere Apps",
   "coming": "Bald im App Store",
@@ -45,8 +45,8 @@ T = {
   "other_lang": "English", "lang_label": "Sprache",
  },
  "en": {
-  "tagline": "Small, useful apps for Mac, iPhone and iPad",
-  "hero_title": "Apps that do one thing really well.",
+  "tagline": "Useful apps for Mac, iPhone and iPad",
+  "hero_title": "Small apps, big help",
   "hero_text": "We build clear, focused apps for Mac, iPhone and iPad – for everyday tasks, for musicians and for church communities. No ads, no forced subscriptions, and respect for your data.",
   "our_apps": "Our apps",
   "coming": "Coming soon to the App Store",
