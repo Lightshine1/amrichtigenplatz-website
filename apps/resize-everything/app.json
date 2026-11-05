@@ -1,0 +1,22 @@
+{
+  "slug": "resize-everything",
+  "name": "Resize Everything",
+  "category": "productivity",
+  "platforms": ["mac", "iphone", "ipad"],
+  "appstore_url": null,
+  "price": null,
+  "order": 1,
+  "privacy_updated": {"de": "November 2026", "en": "November 2026"},
+  "de": {
+    "subtitle": "Videos, Fotos & Audio kleiner",
+    "promo": "Video zu groß für WhatsApp? Foto zu schwer für die E-Mail? Kürzen, zuschneiden, verkleinern – und schon vor dem Export sehen, wie groß die Datei wird."
+  },
+  "en": {
+    "subtitle": "Shrink videos, photos & audio",
+    "promo": "Video too big for WhatsApp? Photo too heavy for email? Trim, crop and compress – and see the new file size before you export."
+  },
+  "screenshots": {
+    "mac": ["macos-1-video", "macos-2-bild", "macos-3-audio"],
+    "iphone": ["iphone-1-video", "iphone-2-bild", "iphone-3-audio"]
+  }
+}

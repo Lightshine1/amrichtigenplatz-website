@@ -1,0 +1,16 @@
+{
+  "domain": "amrichtigenplatz.de",
+  "company": "amrichtigenplatz GbR",
+  "partners": ["Achim Fischer", "Christina Fischer"],
+  "street": "Weinbergsweg 17",
+  "city": "97502 Euerbach",
+  "country_de": "Deutschland",
+  "country_en": "Germany",
+  "phone": "09726 9077 074",
+  "phone_intl": "+49 9726 9077074",
+  "vat_id": "DE297183519",
+  "email": "apps@amrichtigenplatz.de",
+  "support_email": "support@amrichtigenplatz.de",
+  "responsible": "Achim Fischer",
+  "privacy_updated": {"de": "November 2026", "en": "November 2026"}
+}

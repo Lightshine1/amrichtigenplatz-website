@@ -1,0 +1,30 @@
+Resize Everything macht Videos, Fotos und Audiodateien kleiner – schnell, übersichtlich und direkt auf deinem Gerät.
+
+Du siehst schon vor dem Export, wie groß die neue Datei ungefähr wird. So triffst du die richtige Einstellung beim ersten Versuch, egal ob die Datei in einen Messenger, eine E-Mail oder auf eine Website soll.
+
+SCHNELLWAHL FÜR JEDEN ZWECK
+Ein Tipp auf „WhatsApp“, „E-Mail“, „Web“, „Instagram“ oder „Archiv“ stellt Format, Auflösung und Qualität passend ein. Jede Einstellung kannst du danach selbst anpassen.
+
+VIDEOS
+• Vorne und hinten kürzen – mit Vorschaubildern und genauen Zeitangaben
+• Auflösung verringern: 4K, 1080p, 720p, 480p und mehr
+• Qualität stufenlos einstellen, mit Anzeige der Bitrate
+• MP4, MOV oder M4V mit H.264 (läuft überall) oder HEVC (noch kleiner)
+• Nur den Ton als M4A speichern oder den Ton entfernen
+
+FOTOS UND BILDER
+• Frei zuschneiden oder mit festem Seitenverhältnis (1:1, 4:5, 16:9 und mehr)
+• Auf eine bestimmte Pixelgröße verkleinern
+• JPEG, HEIC, AVIF, PNG, TIFF, GIF und BMP
+• Die Größenvorschau beruht auf einer echten Probekodierung und ist sehr genau
+• Wahlweise ohne Metadaten speichern, z. B. ohne GPS-Position
+
+AUDIO
+• Vorne und hinten kürzen – mit Wellenform
+• AAC, Apple Lossless, FLAC, WAV und AIFF
+• Bitrate, Bittiefe, Abtastrate und Mono einstellbar
+
+PRIVAT
+Alles passiert auf deinem Gerät. Deine Dateien werden nirgendwo hochgeladen, und die App sammelt keine Daten.
+
+Auf iPhone und iPad wählst du Dateien aus der Fotos-App oder der Dateien-App und sicherst das Ergebnis in Fotos oder teilst es direkt. Auf dem Mac ziehst du Dateien einfach ins Fenster.
