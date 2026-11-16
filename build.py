@@ -39,6 +39,10 @@ T = {
   "available_for": "Verfügbar für",
   "help": "Hilfe & Kontakt",
   "price": "Preis",
+  "download": "Kostenlos laden",
+  "download_note": "Version {v} · {size} · {req}",
+  "version": "Version",
+  "requires": "Voraussetzung",
   "cat": {"productivity": "Produktivität", "music": "Musik", "church": "Kirche & Gemeinde"},
   "plat": {"mac": "Mac", "iphone": "iPhone", "ipad": "iPad"},
   "updated": "Stand",
@@ -60,6 +64,10 @@ T = {
   "available_for": "Available for",
   "help": "Help & contact",
   "price": "Price",
+  "download": "Download for free",
+  "download_note": "Version {v} · {size} · {req}",
+  "version": "Version",
+  "requires": "Requirements",
   "cat": {"productivity": "Productivity", "music": "Music", "church": "Church & community"},
   "plat": {"mac": "Mac", "iphone": "iPhone", "ipad": "iPad"},
   "updated": "Last updated",
@@ -186,9 +194,23 @@ def page(path, lang, title, body, alt_path, description=""):
 
 def store_button(a, lang, R):
     t = T[lang]
+    btns = []
+    dl = a.get("download")
+    if dl:
+        size = (a["dir"] / dl["file"]).stat().st_size / 1e6
+        size_s = (f"{size:.1f} MB".replace(".", ",") if lang == "de" else f"{size:.1f} MB")
+        note = t["download_note"].format(v=e(dl["version"]), size=size_s, req=e(dl["requires"][lang]))
+        btns.append(f'<a class="btn" href="{R("downloads/" + dl["file"])}" download>{DOWNLOAD_SVG}{t["download"]}</a>')
     if a.get("appstore_url"):
-        return f'<a class="btn" href="{e(a["appstore_url"])}">{APPLE_SVG}{t["appstore"]}</a>'
-    return f'<span class="soon">{t["coming"]}</span>'
+        btns.append(f'<a class="btn" href="{e(a["appstore_url"])}">{APPLE_SVG}{t["appstore"]}</a>')
+    if not btns:
+        return f'<span class="soon">{t["coming"]}</span>'
+    out = '<div class="btns">' + "".join(btns) + "</div>"
+    if dl:
+        out += f'<p class="dl-note">{note}</p>'
+    return out
+
+DOWNLOAD_SVG = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m0 0-5-5m5 5 5-5M4 20h16"/></svg>'
 
 APPLE_SVG = '<svg viewBox="0 0 384 512" width="16" height="20" aria-hidden="true"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>'
 
@@ -242,6 +264,9 @@ def build_app(a, lang):
             for n in names)
         shots += f'<h2>{label}</h2><div class="shots {cls}">{imgs}</div>'
     price = f'<div class="facts-row"><span>{t["price"]}</span><span>{e(a["price"][lang] if isinstance(a.get("price"), dict) else a["price"])}</span></div>' if a.get("price") else ""
+    dl = a.get("download")
+    dl_facts = (f'<div class="facts-row"><span>{t["version"]}</span><span>{e(dl["version"])}</span></div>'
+                f'<div class="facts-row"><span>{t["requires"]}</span><span>{e(dl["requires"][lang])}</span></div>') if dl else ""
     body = f"""
 <section class="app-hero">
   <div class="wrap app-hero-in">
@@ -265,6 +290,7 @@ def build_app(a, lang):
     <aside class="facts">
       <div class="facts-row"><span>{t['available_for']}</span><span>{platforms(a, lang)}</span></div>
       {price}
+      {dl_facts}
       <div class="facts-row"><span>{t['help']}</span><span><a href="{R(PATHS['support'][lang])}">{t['support']}</a></span></div>
       <div class="facts-row"><span>{t['privacy']}</span><span><a href="{R(app_privacy_path(slug, lang))}">{t['app_privacy']}</a></span></div>
     </aside>
@@ -416,6 +442,9 @@ def main():
         d = a["dir"]; slug = a["slug"]; dst = OUT / "assets" / "apps" / slug
         img(d / "icon.png", dst / "icon-256.webp", 256)
         img(d / "icon.png", dst / "icon-512.webp", 512)
+        if a.get("download"):
+            (OUT / "downloads").mkdir(exist_ok=True)
+            shutil.copy2(d / a["download"]["file"], OUT / "downloads" / a["download"]["file"])
         for lang in LANGS:
             for kind, names in a.get("screenshots", {}).items():
                 for n in names:

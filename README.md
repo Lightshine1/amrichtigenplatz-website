@@ -18,6 +18,7 @@ Gehostet über GitHub Pages aus dem Ordner `docs/` (Branch `main`).
 | `description.de.txt`, `description.en.txt` | Beschreibung wie im App Store. Zeile in GROSSBUCHSTABEN = Zwischenüberschrift, `•` = Aufzählung |
 | `privacy.de.html`, `privacy.en.html` | Datenschutz-Abschnitte der App als HTML-Fragment (`<h2>`, `<p>`), ohne Kontaktblock – der wird automatisch ergänzt |
 | `screenshots/<de|en>-<name>.png` | Screenshots; fehlt die deutsche Fassung, wird die englische genommen |
+| `<Datei>.dmg` + `download` in `app.json` | Optional: direkter Download statt/neben App Store – `{"file": "…dmg", "version": "1.0", "requires": {"de": "…", "en": "…"}}`; die Datei wird nach `docs/downloads/` kopiert |
 
 ## Wichtige URLs pro App (für App Store Connect)
 

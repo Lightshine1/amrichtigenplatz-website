@@ -1,0 +1,23 @@
+{
+  "slug": "battery-limit",
+  "name": "Battery Limit",
+  "category": "productivity",
+  "platforms": ["mac"],
+  "appstore_url": null,
+  "price": {"de": "Kostenlos", "en": "Free"},
+  "order": 2,
+  "privacy_updated": {"de": "November 2026", "en": "November 2026"},
+  "download": {
+    "file": "BatteryLimit-1.0.dmg",
+    "version": "1.0",
+    "requires": {"de": "MacBook mit Apple-Chip, macOS 26.4 oder neuer", "en": "MacBook with Apple silicon, macOS 26.4 or later"}
+  },
+  "de": {
+    "subtitle": "Ladelimit für den MacBook-Akku",
+    "promo": "Wer den Akku nur bis 80 oder 90 % lädt, hat länger etwas von ihm. Battery Limit stellt das Ladelimit mit einem Klick in der Menüleiste ein und zeigt den Akkustand gut lesbar direkt im Symbol."
+  },
+  "en": {
+    "subtitle": "Charge limit for your MacBook battery",
+    "promo": "Charging only to 80 or 90 % helps your battery last longer. Battery Limit sets the charge limit with one click in the menu bar and shows the battery level clearly inside its icon."
+  }
+}

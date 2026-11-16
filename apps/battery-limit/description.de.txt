@@ -1,0 +1,28 @@
+Ein Lithium-Akku altert langsamer, wenn er nicht ständig auf 100 % steht. Battery Limit nutzt dafür das Ladelimit, das macOS selbst mitbringt, und macht es bequem in der Menüleiste erreichbar.
+
+LADELIMIT
+• Laden bis 80, 85, 90, 95 oder 100 % – ein Klick im Menü genügt
+• Das Limit speichert macOS selbst, es gilt auch, wenn die App nicht läuft
+• „Einmal voll laden“: vor einer Reise einmalig auf 100 %, nach dem Abstecken gilt wieder das Limit
+• Ist der Akku am Netzteil voller als das Limit, läuft der Mac über das Netzteil und der Akku sinkt langsam auf das Limit
+
+MENÜLEISTE
+• Akkustand in Prozent direkt im Batterie-Symbol – Apples eigenes Symbol kann ausgeblendet werden
+• Die Kontur des Symbols zeigt den Ladestand, ein kleiner Pfeil markiert das Limit
+• Blitz beim Laden, Stecker am Netzteil
+• Blinkt ruhig bei sehr niedrigem Akkustand (einstellbar)
+
+ZEITPLAN
+• Eigenes Ladelimit für jeden Wochentag
+• Auf Wunsch schon am Vorabend umstellen – so ist der Akku morgens für unterwegs voll
+
+MITTEILUNGEN
+• Wenn das Ladelimit erreicht ist
+• Bei niedrigem Akkustand
+• Bei zu schwachem Netzteil und wenn der Akku trotz Netzteil leerer wird
+
+AKKU-GESUNDHEIT
+• Zustand in Prozent der ursprünglichen Kapazität und Zahl der Ladezyklen
+• Monatlicher Verlauf als Diagramm
+
+Alles lässt sich in den Einstellungen einzeln ein- und ausschalten. Battery Limit braucht kein Internet, sammelt keine Daten und zeigt keine Werbung.

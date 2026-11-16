@@ -110,3 +110,6 @@ h2 { font-size: 1.5rem; margin: 2.2rem 0 1rem; }
   .grid { grid-template-columns: 1fr; }
   .shots-phone img { width: 46vw; max-width: 230px; }
 }
+
+.btns { display: flex; flex-wrap: wrap; gap: 10px; }
+.dl-note { margin: 10px 0 0; color: var(--muted); font-size: .9rem; }
