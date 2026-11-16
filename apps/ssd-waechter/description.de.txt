@@ -1,0 +1,25 @@
+Ist die SSD voll, wird der Mac langsam, Updates scheitern und Programme stürzen ab. SSD-Wächter behält den freien Speicher im Blick und meldet sich rechtzeitig – leise in der Menüleiste und ohne den Mac zu bremsen.
+
+WARNUNG IN DER MENÜLEISTE
+• Freier Speicher als Zahl direkt neben dem Laufwerk-Symbol
+• Gelbe Kapsel unter 80 GB, rote Kapsel unter 50 GB – gut lesbar in hellen und dunklen Menüleisten
+• Mitteilung, sobald eine Warnstufe erreicht ist, mit Erinnerung alle vier Stunden
+• Gemessen wird der wirklich freie Speicher, nicht der, den macOS erst später freigeben würde
+
+EINSTELLBAR
+• Eigene Schwellenwerte für Gelb und Rot
+• Prüfintervall von 1 bis 60 Minuten, zusätzlich nach dem Aufwachen
+• Startet auf Wunsch bei der Anmeldung
+
+SPEICHER FREIGEBEN
+• Zeigt vorher, wie viel jeder Bereich belegt
+• App-Caches und alte Protokolldateien
+• Für Entwickler: Xcode-Build-Daten, nicht mehr nutzbare Simulatoren und iOS-Geräte-Support
+• iCloud-Drive-Dateien auslagern, die seit 30 Tagen nicht geöffnet wurden – sie bleiben in iCloud und werden beim Öffnen wieder geladen
+• Papierkorb leeren, mit Sicherheitsabfrage
+• Deine eigenen Dokumente, Fotos und Musik bleiben unangetastet
+
+SPARSAM
+SSD-Wächter prüft nur alle paar Minuten und braucht dazwischen keine Rechenleistung. Die App braucht kein Internet, sammelt keine Daten und zeigt keine Werbung.
+
+Sprachen: Deutsch, Englisch, Französisch, Spanisch, Japanisch und Chinesisch (vereinfacht).

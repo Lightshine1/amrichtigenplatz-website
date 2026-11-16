@@ -110,6 +110,10 @@ def load_apps():
     apps.sort(key=lambda a: (a.get("order", 99), a["name"]))
     return apps
 
+def nm(a, lang):
+    """App-Name in der Sprache der Seite (optional "name" in app.json unter "de"/"en")."""
+    return a[lang].get("name", a["name"])
+
 def desc_to_html(txt):
     out, ul = [], False
     for line in txt.strip().split("\n"):
@@ -228,7 +232,7 @@ def build_home(apps, lang):
     <img class="icon" src="{R('assets/apps/' + a['slug'] + '/icon-256.webp')}" alt="" width="96" height="96">
     <div class="card-body">
       <div class="cat">{t['cat'].get(a['category'], '')}</div>
-      <h3>{e(a['name'])}</h3>
+      <h3>{e(nm(a, lang))}</h3>
       <p>{e(L['subtitle'])}</p>
       <div class="meta">{platforms(a, lang)}</div>
     </div>
@@ -260,7 +264,7 @@ def build_app(a, lang):
         names = a.get("screenshots", {}).get(kind, [])
         if not names: continue
         imgs = "".join(
-            f'<img src="{R(f"assets/apps/{slug}/{lang}-{n}.webp")}" alt="{e(a["name"])} – {label}" loading="lazy" width="{SIZES[(slug, lang, n)][0]}" height="{SIZES[(slug, lang, n)][1]}">'
+            f'<img src="{R(f"assets/apps/{slug}/{lang}-{n}.webp")}" alt="{e(nm(a, lang))} – {label}" loading="lazy" width="{SIZES[(slug, lang, n)][0]}" height="{SIZES[(slug, lang, n)][1]}">'
             for n in names)
         shots += f'<h2>{label}</h2><div class="shots {cls}">{imgs}</div>'
     price = f'<div class="facts-row"><span>{t["price"]}</span><span>{e(a["price"][lang] if isinstance(a.get("price"), dict) else a["price"])}</span></div>' if a.get("price") else ""
@@ -273,7 +277,7 @@ def build_app(a, lang):
     <img class="icon-big" src="{R(f'assets/apps/{slug}/icon-512.webp')}" alt="" width="160" height="160">
     <div>
       <div class="cat">{t['cat'].get(a['category'], '')}</div>
-      <h1>{e(a['name'])}</h1>
+      <h1>{e(nm(a, lang))}</h1>
       <p class="subtitle">{e(L['subtitle'])}</p>
       <p class="lead">{e(L['promo'])}</p>
       {store_button(a, lang, R)}
@@ -296,18 +300,18 @@ def build_app(a, lang):
     </aside>
   </div>
 </section>"""
-    page(path, lang, f"{a['name']} – {L['subtitle']}", body, app_path(slug, other), L["promo"])
+    page(path, lang, f"{nm(a, lang)} – {L['subtitle']}", body, app_path(slug, other), L["promo"])
 
 def build_app_privacy(a, lang):
     t = T[lang]; L = a[lang]; slug = a["slug"]
     path = app_privacy_path(slug, lang); R = lambda p: rel(path, p)
     other = "en" if lang == "de" else "de"
-    h1 = f"Datenschutzerklärung für „{a['name']}“" if lang == "de" else f"Privacy Policy for “{a['name']}”"
+    h1 = f"Datenschutzerklärung für „{nm(a, lang)}“" if lang == "de" else f"Privacy Policy for “{nm(a, lang)}”"
     contact_h = "Verantwortlich und Kontakt" if lang == "de" else "Controller and contact"
     more = ("Allgemeine Hinweise zu deinen Rechten findest du in der " if lang == "de" else "General information about your rights can be found in our ")
     body = f"""
 <section class="wrap prose">
-  <p class="back"><a href="{R(app_path(slug, lang))}">← {e(a['name'])}</a></p>
+  <p class="back"><a href="{R(app_path(slug, lang))}">← {e(nm(a, lang))}</a></p>
   <h1>{e(h1)}</h1>
   <p class="muted">{t['updated']}: {e(a.get('privacy_updated', SITE['privacy_updated'])[lang])}</p>
   {L['privacy_html']}
@@ -329,7 +333,7 @@ def build_static_page(key, lang, title, html_body):
 def build_support(apps, lang):
     s = SITE
     path = PATHS["support"][lang]; R = lambda p: rel(path, p)
-    lis = "".join(f'<li><a href="{R(app_path(a["slug"], lang))}">{e(a["name"])}</a></li>' for a in apps)
+    lis = "".join(f'<li><a href="{R(app_path(a["slug"], lang))}">{e(nm(a, lang))}</a></li>' for a in apps)
     if lang == "de":
         b = f"""<p>Du hast eine Frage zu einer unserer Apps, einen Fehler gefunden oder einen Verbesserungsvorschlag? Schreib uns – wir antworten in der Regel innerhalb von zwei Werktagen.</p>
 <p class="mailbox"><a class="btn" href="mailto:{s['support_email']}">{s['support_email']}</a></p>
@@ -387,7 +391,7 @@ def build_imprint(lang):
 def build_privacy(apps, lang):
     s = SITE
     path = PATHS["privacy"][lang]; R = lambda p: rel(path, p)
-    applinks = "".join(f'<li><a href="{R(app_privacy_path(a["slug"], lang))}">{e(a["name"])}</a></li>' for a in apps)
+    applinks = "".join(f'<li><a href="{R(app_privacy_path(a["slug"], lang))}">{e(nm(a, lang))}</a></li>' for a in apps)
     if lang == "de":
         b = f"""<p class="muted">Stand: {s['privacy_updated']['de']}</p>
 <h2>1. Verantwortlicher</h2>

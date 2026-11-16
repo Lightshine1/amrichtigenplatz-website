@@ -13,7 +13,7 @@ Gehostet über GitHub Pages aus dem Ordner `docs/` (Branch `main`).
 
 | Datei | Inhalt |
 |---|---|
-| `app.json` | `slug`, `name`, `category` (`productivity` / `music` / `church`), `platforms` (`mac`, `iphone`, `ipad`), `appstore_url` (null = „Bald im App Store“), `price` (null oder `{"de": "…", "en": "…"}`), `order`, optional `hidden: true`, `privacy_updated`, `de`/`en` mit `subtitle` und `promo`, `screenshots` (`mac`/`iphone` → Namensliste) |
+| `app.json` | `slug`, `name`, `category` (`productivity` / `music` / `church`), `platforms` (`mac`, `iphone`, `ipad`), `appstore_url` (null = „Bald im App Store“), `price` (null oder `{"de": "…", "en": "…"}`), `order`, optional `hidden: true`, `privacy_updated`, `de`/`en` mit `subtitle` und `promo` (optional `name`, wenn die App in der Sprache anders heißt), `screenshots` (`mac`/`iphone` → Namensliste) |
 | `icon.png` | App-Icon, quadratisch, 1024 px |
 | `description.de.txt`, `description.en.txt` | Beschreibung wie im App Store. Zeile in GROSSBUCHSTABEN = Zwischenüberschrift, `•` = Aufzählung |
 | `privacy.de.html`, `privacy.en.html` | Datenschutz-Abschnitte der App als HTML-Fragment (`<h2>`, `<p>`), ohne Kontaktblock – der wird automatisch ergänzt |

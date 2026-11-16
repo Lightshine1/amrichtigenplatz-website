@@ -1,0 +1,41 @@
+{
+  "slug": "ssd-waechter",
+  "name": "SSD-Wächter",
+  "category": "productivity",
+  "platforms": [
+    "mac"
+  ],
+  "appstore_url": null,
+  "price": {
+    "de": "Kostenlos",
+    "en": "Free"
+  },
+  "order": 3,
+  "privacy_updated": {
+    "de": "November 2026",
+    "en": "November 2026"
+  },
+  "download": {
+    "file": "SSD-Waechter-1.1.dmg",
+    "version": "1.1",
+    "requires": {
+      "de": "macOS 14 oder neuer, Apple-Chip oder Intel",
+      "en": "macOS 14 or later, Apple silicon or Intel"
+    }
+  },
+  "de": {
+    "subtitle": "Warnt, bevor die SSD voll ist",
+    "promo": "Wird der Speicher knapp, zeigt SSD-Wächter das sofort in der Menüleiste – gelb ab 80 GB, rot ab 50 GB. Und mit einem Klick gibst du wieder Platz frei."
+  },
+  "en": {
+    "name": "SSD Guard",
+    "subtitle": "Warns you before your SSD fills up",
+    "promo": "When free space runs low, SSD Guard shows it right in your menu bar – yellow below 80 GB, red below 50 GB. And one click frees up space again."
+  },
+  "screenshots": {
+    "mac": [
+      "macos-1-warnung-aufraeumen",
+      "macos-2-schwellenwerte"
+    ]
+  }
+}
