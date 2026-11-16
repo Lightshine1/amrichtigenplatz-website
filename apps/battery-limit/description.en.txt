@@ -27,4 +27,4 @@ BATTERY HEALTH
 
 Every feature can be turned on or off in the settings. Battery Limit needs no internet connection, collects no data and shows no ads.
 
-The app is currently available in German only.
+Languages: English, German, French, Spanish, Japanese and Chinese (Simplified).

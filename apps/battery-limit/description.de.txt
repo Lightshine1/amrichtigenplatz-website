@@ -26,3 +26,5 @@ AKKU-GESUNDHEIT
 • Monatlicher Verlauf als Diagramm
 
 Alles lässt sich in den Einstellungen einzeln ein- und ausschalten. Battery Limit braucht kein Internet, sammelt keine Daten und zeigt keine Werbung.
+
+Sprachen: Deutsch, Englisch, Französisch, Spanisch, Japanisch und Chinesisch (vereinfacht).
