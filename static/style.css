@@ -113,3 +113,16 @@ h2 { font-size: 1.5rem; margin: 2.2rem 0 1rem; }
 
 .btns { display: flex; flex-wrap: wrap; gap: 10px; }
 .dl-note { margin: 10px 0 0; color: var(--muted); font-size: .9rem; }
+
+/* Ratgeber */
+.guides { padding-top: 32px; }
+.guides h1 { font-size: 2.2rem; margin-bottom: .4rem; }
+.guide .cat a { color: var(--muted); text-decoration: none; }
+.guide li { margin-bottom: .4rem; }
+.guide-cta { display: flex; gap: 18px; align-items: flex-start; margin-top: 2.5rem; padding: 22px; background: var(--card); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); }
+.guide-cta .icon { width: 84px; height: 84px; border-radius: 19px; flex: none; }
+.guide-cta h2 { margin: .1rem 0 .3rem; }
+.guide-cta h2 a { color: var(--text); text-decoration: none; }
+.guide-cta p { margin: 0 0 .9rem; color: var(--muted); }
+.guide-cta p.cat { margin: 0; }
+@media (max-width: 720px) { .guide-cta { flex-direction: column; } }

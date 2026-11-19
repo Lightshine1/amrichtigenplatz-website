@@ -31,7 +31,11 @@ T = {
   "coming": "Bald im App Store",
   "appstore": "Im App Store laden",
   "more": "Mehr erfahren",
-  "nav_apps": "Apps", "nav_support": "Support",
+  "nav_apps": "Apps", "nav_support": "Support", "nav_guides": "Ratgeber",
+  "guides_title": "Ratgeber",
+  "guides_lead": "Kurze Anleitungen für typische Alltagsprobleme mit Fotos, Videos und Dateien – am iPhone, iPad und Mac.",
+  "read_more": "Weiterlesen",
+  "guide_cta": "Am schnellsten geht es mit",
   "imprint": "Impressum", "privacy": "Datenschutz", "support": "Support",
   "app_privacy": "Datenschutzerklärung der App",
   "screens_mac": "Auf dem Mac", "screens_iphone": "Auf dem iPhone",
@@ -56,7 +60,11 @@ T = {
   "coming": "Coming soon to the App Store",
   "appstore": "Download on the App Store",
   "more": "Learn more",
-  "nav_apps": "Apps", "nav_support": "Support",
+  "nav_apps": "Apps", "nav_support": "Support", "nav_guides": "Guides",
+  "guides_title": "Guides",
+  "guides_lead": "Short how-tos for everyday problems with photos, videos and files – on iPhone, iPad and Mac.",
+  "read_more": "Read more",
+  "guide_cta": "The quickest way:",
   "imprint": "Legal notice", "privacy": "Privacy", "support": "Support",
   "app_privacy": "App privacy policy",
   "screens_mac": "On Mac", "screens_iphone": "On iPhone",
@@ -81,7 +89,9 @@ PATHS = {
  "support": {"de": "support/",        "en": "en/support/"},
  "privacy": {"de": "datenschutz/",    "en": "en/privacy/"},
  "imprint": {"de": "impressum/",      "en": "en/legal-notice/"},
+ "guides":  {"de": "ratgeber/",       "en": "en/guides/"},
 }
+def guide_path(g, lang):           return PATHS["guides"][lang] + g[lang]["slug"] + "/"
 def app_path(slug, lang):          return ("" if lang == "de" else "en/") + f"apps/{slug}/"
 def app_privacy_path(slug, lang):  return app_path(slug, lang) + ("datenschutz/" if lang == "de" else "privacy/")
 
@@ -170,6 +180,7 @@ def page(path, lang, title, body, alt_path, description=""):
     <a class="brand" href="{R(PATHS['home'][lang])}"><img src="{R('static/logo.png')}" alt="" width="34" height="38"><span>amrichtigenplatz</span></a>
     <nav>
       <a href="{R(PATHS['home'][lang])}#apps">{t['nav_apps']}</a>
+      <a href="{R(PATHS['guides'][lang])}">{t['nav_guides']}</a>
       <a href="{R(PATHS['support'][lang])}">{t['nav_support']}</a>
       <a class="lang" href="{R(alt_path)}" hreflang="{other}" lang="{other}" aria-label="{t['lang_label']}: {t['other_lang']}">{other.upper()}</a>
     </nav>
@@ -220,6 +231,64 @@ APPLE_SVG = '<svg viewBox="0 0 384 512" width="16" height="20" aria-hidden="true
 
 def platforms(a, lang):
     return " · ".join(T[lang]["plat"][p] for p in a["platforms"])
+
+# ---------------------------------------------------------------- Ratgeber
+def load_guides():
+    d = ROOT / "ratgeber"
+    gs = [json.loads(f.read_text()) for f in sorted(d.glob("*.json"))] if d.exists() else []
+    return sorted(gs, key=lambda g: g.get("order", 99))
+
+def build_guides_index(guides, apps, lang):
+    t = T[lang]; path = PATHS["guides"][lang]; R = lambda p: rel(path, p)
+    other = "en" if lang == "de" else "de"
+    byslug = {a["slug"]: a for a in apps}
+    cards = []
+    for g in guides:
+        a = byslug.get(g.get("app"))
+        icon = f'<img class="icon" src="{R("assets/apps/" + a["slug"] + "/icon-256.webp")}" alt="" width="96" height="96">' if a else ""
+        cards.append(f"""
+  <a class="card" href="{R(guide_path(g, lang))}">
+    {icon}
+    <div class="card-body">
+      <h3>{e(g[lang]['title'])}</h3>
+      <p>{e(g[lang]['teaser'])}</p>
+      <div class="meta">{t['read_more']} →</div>
+    </div>
+  </a>""")
+    body = f"""
+<section class="wrap guides">
+  <h1>{t['guides_title']}</h1>
+  <p class="lead">{t['guides_lead']}</p>
+  <div class="grid">{''.join(cards)}
+  </div>
+</section>"""
+    page(path, lang, f"{t['guides_title']} – amrichtigenplatz", body, PATHS["guides"][other], t["guides_lead"])
+
+def build_guide(g, apps, lang):
+    t = T[lang]; G = g[lang]; path = guide_path(g, lang); R = lambda p: rel(path, p)
+    other = "en" if lang == "de" else "de"
+    a = next((x for x in apps if x["slug"] == g.get("app")), None)
+    cta = ""
+    if a:
+        cta = f"""
+<aside class="guide-cta">
+  <a href="{R(app_path(a['slug'], lang))}"><img class="icon" src="{R('assets/apps/' + a['slug'] + '/icon-256.webp')}" alt="" width="84" height="84"></a>
+  <div>
+    <p class="cat">{t['guide_cta']}</p>
+    <h2><a href="{R(app_path(a['slug'], lang))}">{e(nm(a, lang))}</a></h2>
+    <p>{e(a[lang]['promo'])}</p>
+    {store_button(a, lang, R)}
+  </div>
+</aside>"""
+    body = f"""
+<article class="wrap prose guide">
+  <p class="cat"><a href="{R(PATHS['guides'][lang])}">{t['guides_title']}</a></p>
+  <h1>{e(G['title'])}</h1>
+  <p class="lead">{e(G['description'])}</p>
+  {G['html']}
+  {cta}
+</article>"""
+    page(path, lang, f"{G['title']} – amrichtigenplatz", body, guide_path(g, other), G["description"])
 
 # ---------------------------------------------------------------- Seiten
 def build_home(apps, lang):
@@ -442,6 +511,7 @@ def main():
     OUT.mkdir()
     shutil.copytree(ROOT / "static", OUT / "static")
     apps = load_apps()
+    guides = load_guides()
     for a in apps:
         d = a["dir"]; slug = a["slug"]; dst = OUT / "assets" / "apps" / slug
         img(d / "icon.png", dst / "icon-256.webp", 256)
@@ -461,6 +531,9 @@ def main():
         build_support(apps, lang)
         build_imprint(lang)
         build_privacy(apps, lang)
+        build_guides_index(guides, apps, lang)
+        for g in guides:
+            build_guide(g, apps, lang)
         for a in apps:
             build_app(a, lang)
             build_app_privacy(a, lang)
@@ -468,13 +541,14 @@ def main():
     (OUT / "CNAME").write_text(SITE["domain"] + "\n")
     (OUT / ".nojekyll").write_text("")
     page_404 = (OUT / "index.html").read_text()
-    (OUT / "404.html").write_text(page_404.replace('href="static/', 'href="/static/').replace('src="static/', 'src="/static/').replace('src="assets/', 'src="/assets/').replace('href="apps/', 'href="/apps/').replace('href="support/', 'href="/support/').replace('href="datenschutz/', 'href="/datenschutz/').replace('href="impressum/', 'href="/impressum/').replace('href="en/', 'href="/en/').replace('href="./', 'href="/'))
+    (OUT / "404.html").write_text(page_404.replace('href="static/', 'href="/static/').replace('src="static/', 'src="/static/').replace('src="assets/', 'src="/assets/').replace('href="apps/', 'href="/apps/').replace('href="support/', 'href="/support/').replace('href="datenschutz/', 'href="/datenschutz/').replace('href="impressum/', 'href="/impressum/').replace('href="ratgeber/', 'href="/ratgeber/').replace('href="en/', 'href="/en/').replace('href="./', 'href="/'))
     # sitemap
     urls = []
     for lang in LANGS:
         urls += [PATHS[k][lang] for k in PATHS]
         for a in apps:
             urls += [app_path(a["slug"], lang), app_privacy_path(a["slug"], lang)]
+        urls += [guide_path(g, lang) for g in guides]
     (OUT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
         "".join(f"  <url><loc>https://{SITE['domain']}/{u}</loc></url>\n" for u in urls) + "</urlset>\n")
     (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: https://{SITE['domain']}/sitemap.xml\n")
