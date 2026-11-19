@@ -9,11 +9,11 @@
   "privacy_updated": {"de": "November 2026", "en": "November 2026"},
   "de": {
     "subtitle": "Videos, Fotos & Audio kleiner",
-    "promo": "Video zu groß für WhatsApp? Foto zu schwer für die E-Mail? Kürzen, zuschneiden, verkleinern – und schon vor dem Export sehen, wie groß die Datei wird."
+    "promo": "Eine App für alles, was zu groß ist: Videos, Fotos, Audio und PDFs kürzen, zuschneiden und verkleinern – und schon vor dem Export sehen, wie groß die Datei wird."
   },
   "en": {
     "subtitle": "Shrink videos, photos & audio",
-    "promo": "Video too big for WhatsApp? Photo too heavy for email? Trim, crop and compress – and see the new file size before you export."
+    "promo": "One app for everything that's too big: trim, crop and shrink videos, photos, audio and PDFs – and see the new file size before you export."
   },
   "screenshots": {
     "mac": ["macos-1-video", "macos-2-bild", "macos-3-audio"],
