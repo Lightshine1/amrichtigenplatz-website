@@ -1,0 +1,30 @@
+Chord Live listens through the microphone and shows the chords of the music that's playing in real time – big, easy to read, on a black background. Perfect for jumping in and playing along, even without sheet music.
+
+IT'S THAT SIMPLE
+Put your iPhone or iPad next to you, let the music play – from the radio, a speaker or live – and play along. The current chord fills the whole screen, in portrait or landscape.
+
+FOUR LEVELS
+• Simple: major and minor only
+• Standard: adds 7, m7, maj7, sus2 and sus4
+• Extended: adds 6, m6, add9, diminished and augmented
+• Pro: every chord, including bass notes (e.g. C/E)
+
+FOR GUITAR OR PIANO
+In guitar mode, Chord Live shows easy-to-play variants such as Bm7 instead of Bm or Fmaj7 instead of F. They fit the music and need no barre.
+
+WHAT'S NEXT?
+The chords most likely to come next appear on the right – the brighter, the more likely. The prediction knows the harmony of the key and learns the song's progressions as it goes: when the chorus comes back, Chord Live knows what's coming.
+
+KEY
+The detected key of the song is shown at the top right.
+
+THOUGHTFUL DETAILS
+• Talking and noise don't count as music
+• A new song starts automatically after a short pause
+• Optional German notation (H instead of B)
+• The screen stays on while the app is running
+
+PRIVATE
+The music is analyzed only on your device. Nothing is recorded, stored or sent anywhere. No account, no ads, no data collection.
+
+Chord Live is free.

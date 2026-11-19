@@ -1,0 +1,34 @@
+{
+  "slug": "chord-live",
+  "name": "Chord Live",
+  "category": "music",
+  "platforms": [
+    "iphone",
+    "ipad"
+  ],
+  "appstore_url": null,
+  "price": {
+    "de": "Kostenlos",
+    "en": "Free"
+  },
+  "order": 4,
+  "privacy_updated": {
+    "de": "November 2026",
+    "en": "November 2026"
+  },
+  "de": {
+    "subtitle": "Akkorde erkennen in Echtzeit",
+    "promo": "Musik läuft, du willst mitspielen, aber hast keine Noten? Chord Live hört zu und zeigt die Akkorde sofort riesengroß an – mit Vorschau auf den nächsten Akkord."
+  },
+  "en": {
+    "subtitle": "Real-time chord recognition",
+    "promo": "Music is playing and you want to join in, but there's no sheet music? Chord Live listens and shows the chords instantly in huge letters – with a preview of what's next."
+  },
+  "screenshots": {
+    "iphone": [
+      "iphone-1-akkord",
+      "iphone-2-stufen",
+      "iphone-3-einstellungen"
+    ]
+  }
+}
