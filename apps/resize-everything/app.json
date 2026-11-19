@@ -3,8 +3,8 @@
   "name": "Resize Everything",
   "category": "productivity",
   "platforms": ["mac", "iphone", "ipad"],
-  "appstore_url": null,
-  "price": null,
+  "appstore_url": "https://apps.apple.com/app/resize-everything/id6834964703",
+  "price": {"de": "Kostenlos (15 Exporte), Vollversion per In-App-Kauf", "en": "Free (15 exports), full version via in-app purchase"},
   "order": 1,
   "privacy_updated": {"de": "November 2026", "en": "November 2026"},
   "de": {
