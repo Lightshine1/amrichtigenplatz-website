@@ -126,3 +126,4 @@ h2 { font-size: 1.5rem; margin: 2.2rem 0 1rem; }
 .guide-cta p { margin: 0 0 .9rem; color: var(--muted); }
 .guide-cta p.cat { margin: 0; }
 @media (max-width: 720px) { .guide-cta { flex-direction: column; } }
+@media (max-width: 520px) { .brand span { display: none; } .top nav { gap: 14px; } }
