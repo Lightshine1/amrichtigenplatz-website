@@ -21,7 +21,8 @@
     "requires": {
       "de": "macOS 14 oder neuer, Apple-Chip oder Intel",
       "en": "macOS 14 or later, Apple silicon or Intel"
-    }
+    },
+    "url": "https://github.com/Lightshine1/amrichtigenplatz-website/releases/download/ssd-guard-1.2/SSD-Guard-1.2.dmg"
   },
   "de": {
     "subtitle": "Warnt, bevor die SSD voll ist",

@@ -21,7 +21,8 @@
     "requires": {
       "de": "MacBook mit Apple-Chip, macOS 26.4 oder neuer",
       "en": "MacBook with Apple silicon, macOS 26.4 or later"
-    }
+    },
+    "url": "https://github.com/Lightshine1/amrichtigenplatz-website/releases/download/battery-limit-1.1/BatteryLimit-1.1.dmg"
   },
   "de": {
     "subtitle": "Ladelimit für den MacBook-Akku",

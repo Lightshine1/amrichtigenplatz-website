@@ -1,0 +1,29 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Downloads – intern</title>
+<style>body{font:16px/1.5 -apple-system,system-ui,sans-serif;max-width:720px;margin:40px auto;padding:0 16px;color:#222;background:#fff}
+h1{font-size:24px}table{border-collapse:collapse;width:100%;margin:16px 0}td,th{padding:8px 10px;border-bottom:1px solid #ddd;text-align:left}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}tr.sum td{font-weight:700}small{color:#666}
+@media (prefers-color-scheme:dark){body{background:#1c1c1e;color:#eee}td,th{border-color:#333}small{color:#999}}</style></head>
+<body><h1>App-Downloads (kostenlos)</h1><p id="s">Lade Zahlen …</p><div id="out"></div>
+<p><small>Quelle: GitHub-Releases von Lightshine1/amrichtigenplatz-website. Gezählt wird jeder Abruf der Datei (auch abgebrochene oder wiederholte Downloads und Bots); die Zahl ist also ein Richtwert. Keine Cookies, keine Besucherdaten.</small></p>
+<script>
+const NAMES = {"battery-limit": "Battery Limit", "ssd-guard": "SSD Guard"};
+fetch("https://api.github.com/repos/Lightshine1/amrichtigenplatz-website/releases?per_page=100").then(r => r.json()).then(rel => {
+  const apps = {};
+  for (const r of rel) {
+    const slug = r.tag_name.replace(/-[^-]+$/, ""), ver = r.tag_name.slice(slug.length + 1);
+    const n = r.assets.reduce((s, a) => s + a.download_count, 0);
+    (apps[slug] = apps[slug] || []).push([ver, n, r.created_at.slice(0, 10)]);
+  }
+  let html = "", total = 0;
+  for (const slug of Object.keys(apps)) {
+    const rows = apps[slug], sum = rows.reduce((s, x) => s + x[1], 0); total += sum;
+    html += `<h2>${NAMES[slug] || slug}</h2><table><tr><th>Version</th><th>seit</th><th class="n">Downloads</th></tr>` +
+      rows.map(x => `<tr><td>${x[0]}</td><td>${x[2]}</td><td class="n">${x[1]}</td></tr>`).join("") +
+      `<tr class="sum"><td>Gesamt</td><td></td><td class="n">${sum}</td></tr></table>`;
+  }
+  document.getElementById("out").innerHTML = html;
+  document.getElementById("s").textContent = "Alle Apps zusammen: " + total + " Downloads · Stand " + new Date().toLocaleString("de-DE");
+}).catch(() => document.getElementById("s").textContent = "Zahlen konnten nicht geladen werden (GitHub nicht erreichbar oder Abruflimit erreicht – später neu laden).");
+</script></body></html>

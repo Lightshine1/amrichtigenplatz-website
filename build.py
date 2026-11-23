@@ -215,7 +215,8 @@ def store_button(a, lang, R):
         size = (a["dir"] / dl["file"]).stat().st_size / 1e6
         size_s = (f"{size:.1f} MB".replace(".", ",") if lang == "de" else f"{size:.1f} MB")
         note = t["download_note"].format(v=e(dl["version"]), size=size_s, req=e(dl["requires"][lang]))
-        btns.append(f'<a class="btn" href="{R("downloads/" + dl["file"])}" download>{DOWNLOAD_SVG}{t["download"]}</a>')
+        href = dl.get("url") or R("downloads/" + dl["file"])  # url = GitHub-Release (zählt Downloads, ohne Cookies)
+        btns.append(f'<a class="btn" href="{e(href)}" download>{DOWNLOAD_SVG}{t["download"]}</a>')
     if a.get("appstore_url"):
         btns.append(f'<a class="btn" href="{e(a["appstore_url"])}">{APPLE_SVG}{t["appstore"]}</a>')
     if not btns:
@@ -502,6 +503,47 @@ def build_privacy(apps, lang):
 <p>You may also lodge a complaint with a data protection supervisory authority. The authority responsible for us is the Bavarian State Office for Data Protection Supervision (BayLDA), Promenade 18, 91522 Ansbach, Germany.</p>"""
         build_static_page("privacy", "en", "Privacy Policy", b)
 
+# ---------------------------------------------------------------- Download-Statistik (intern)
+STATS_PATH = "intern/downloads"
+
+def build_download_stats(apps):
+    """Nicht verlinkte Seite: liest die Download-Zahlen der GitHub-Releases (keine Cookies, kein Tracking)."""
+    repo = SITE.get("github_repo", "Lightshine1/amrichtigenplatz-website")
+    names = {a["download"]["url"].split("/releases/download/")[1].split("/")[0].rsplit("-", 1)[0]: a["name"]
+             for a in apps if a.get("download", {}).get("url")}
+    page = f"""<!doctype html><html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Downloads – intern</title>
+<style>body{{font:16px/1.5 -apple-system,system-ui,sans-serif;max-width:720px;margin:40px auto;padding:0 16px;color:#222;background:#fff}}
+h1{{font-size:24px}}table{{border-collapse:collapse;width:100%;margin:16px 0}}td,th{{padding:8px 10px;border-bottom:1px solid #ddd;text-align:left}}
+td.n,th.n{{text-align:right;font-variant-numeric:tabular-nums}}tr.sum td{{font-weight:700}}small{{color:#666}}
+@media (prefers-color-scheme:dark){{body{{background:#1c1c1e;color:#eee}}td,th{{border-color:#333}}small{{color:#999}}}}</style></head>
+<body><h1>App-Downloads (kostenlos)</h1><p id="s">Lade Zahlen …</p><div id="out"></div>
+<p><small>Quelle: GitHub-Releases von {repo}. Gezählt wird jeder Abruf der Datei (auch abgebrochene oder wiederholte Downloads und Bots); die Zahl ist also ein Richtwert. Keine Cookies, keine Besucherdaten.</small></p>
+<script>
+const NAMES = {json.dumps(names, ensure_ascii=False)};
+fetch("https://api.github.com/repos/{repo}/releases?per_page=100").then(r => r.json()).then(rel => {{
+  const apps = {{}};
+  for (const r of rel) {{
+    const slug = r.tag_name.replace(/-[^-]+$/, ""), ver = r.tag_name.slice(slug.length + 1);
+    const n = r.assets.reduce((s, a) => s + a.download_count, 0);
+    (apps[slug] = apps[slug] || []).push([ver, n, r.created_at.slice(0, 10)]);
+  }}
+  let html = "", total = 0;
+  for (const slug of Object.keys(apps)) {{
+    const rows = apps[slug], sum = rows.reduce((s, x) => s + x[1], 0); total += sum;
+    html += `<h2>${{NAMES[slug] || slug}}</h2><table><tr><th>Version</th><th>seit</th><th class="n">Downloads</th></tr>` +
+      rows.map(x => `<tr><td>${{x[0]}}</td><td>${{x[2]}}</td><td class="n">${{x[1]}}</td></tr>`).join("") +
+      `<tr class="sum"><td>Gesamt</td><td></td><td class="n">${{sum}}</td></tr></table>`;
+  }}
+  document.getElementById("out").innerHTML = html;
+  document.getElementById("s").textContent = "Alle Apps zusammen: " + total + " Downloads · Stand " + new Date().toLocaleString("de-DE");
+}}).catch(() => document.getElementById("s").textContent = "Zahlen konnten nicht geladen werden (GitHub nicht erreichbar oder Abruflimit erreicht – später neu laden).");
+</script></body></html>"""
+    f = OUT / STATS_PATH / "index.html"
+    f.parent.mkdir(parents=True, exist_ok=True)
+    f.write_text(page)
+
 # ---------------------------------------------------------------- Hauptprogramm
 SIZES = {}
 
@@ -537,6 +579,7 @@ def main():
         for a in apps:
             build_app(a, lang)
             build_app_privacy(a, lang)
+    build_download_stats(apps)
     # 404, CNAME, .nojekyll
     (OUT / "CNAME").write_text(SITE["domain"] + "\n")
     (OUT / ".nojekyll").write_text("")
