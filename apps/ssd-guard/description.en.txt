@@ -4,10 +4,11 @@ WARNING IN THE MENU BAR
 • Free space shown as a number right next to the drive icon
 • Yellow badge below 80 GB, red badge below 50 GB – easy to read in light and dark menu bars
 • A notification as soon as a warning level is reached, with a reminder every four hours
-• Measures the space that is really free, not space macOS would only release later
+• Shows free space the way System Settings and the Finder do – with the immediately free part listed below
 
 ADJUSTABLE
 • Your own thresholds for yellow and red
+• Optionally show only immediately free space, without the part macOS releases when needed
 • Check interval from 1 to 60 minutes, plus a check after waking up
 • Opens at login if you like
 

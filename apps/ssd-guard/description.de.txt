@@ -4,10 +4,11 @@ WARNUNG IN DER MENÜLEISTE
 • Freier Speicher als Zahl direkt neben dem Laufwerk-Symbol
 • Gelbe Kapsel unter 80 GB, rote Kapsel unter 50 GB – gut lesbar in hellen und dunklen Menüleisten
 • Mitteilung, sobald eine Warnstufe erreicht ist, mit Erinnerung alle vier Stunden
-• Gemessen wird der wirklich freie Speicher, nicht der, den macOS erst später freigeben würde
+• Zeigt den freien Speicher wie die Systemeinstellungen und der Finder – darunter steht, wie viel davon sofort frei ist
 
 EINSTELLBAR
 • Eigene Schwellenwerte für Gelb und Rot
+• Wahlweise nur den sofort freien Speicher anzeigen, ohne den Anteil, den macOS erst bei Bedarf freigibt
 • Prüfintervall von 1 bis 60 Minuten, zusätzlich nach dem Aufwachen
 • Startet auf Wunsch bei der Anmeldung
 
