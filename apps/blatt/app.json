@@ -1,0 +1,40 @@
+{
+  "slug": "blatt",
+  "name": "Blatt",
+  "category": "productivity",
+  "platforms": [
+    "mac",
+    "iphone",
+    "ipad"
+  ],
+  "appstore_url": null,
+  "price": {
+    "de": "Kostenlos (ab 1. Februar 2027: 1,99 €)",
+    "en": "Free (from 1 February 2027: €1.99)"
+  },
+  "order": 6,
+  "privacy_updated": {
+    "de": "November 2026",
+    "en": "November 2026"
+  },
+  "de": {
+    "subtitle": "Klein, schnell, das Wichtigste",
+    "promo": "Notizen und Tabellen ohne Ballast: Blatt ist nur wenige Megabyte groß, startet sofort und hat trotzdem alles, was man im Alltag wirklich braucht."
+  },
+  "en": {
+    "subtitle": "Tiny, fast, just what matters",
+    "promo": "Notes and spreadsheets without the bloat: Blatt is only a few megabytes, opens instantly and still has everything you really need day to day."
+  },
+  "screenshots": {
+    "mac": [
+      "macos-1-text",
+      "macos-2-tabelle",
+      "macos-3-termine"
+    ],
+    "iphone": [
+      "iphone-1-text",
+      "iphone-2-tabelle",
+      "iphone-3-termine"
+    ]
+  }
+}

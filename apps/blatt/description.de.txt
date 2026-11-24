@@ -1,0 +1,28 @@
+Blatt ist ein Schreibprogramm und eine Tabellenkalkulation in einer winzigen App. Nur wenige Megabyte groß, startet sofort, reagiert ohne Verzögerung – und hat trotzdem die wichtigsten Funktionen an Bord.
+
+Blatt will Word und Excel nicht ersetzen. Es ist für alles dazwischen: Notizen, Listen, Briefentwürfe, Haushaltsbuch, Einkaufsliste, Packliste oder eine schnelle Rechnung. Ohne Menüwüsten, ohne Konto, ohne Abo.
+
+TEXTE
+• Überschriften, Fett, Kursiv, Unterstrichen, Durchgestrichen, Markieren
+• Aufzählungen, nummerierte Listen und Aufgabenlisten zum Abhaken
+• Zitate, Links, Trennlinien und Code
+• Inhaltsverzeichnis mit ein- und ausklappbaren Überschriften
+• Gespeichert wird als Markdown – lesbar in jedem Programm. Die Zeichen sind ausgeblendet, du siehst gleich das Ergebnis
+• Export als PDF, Word, RTF, HTML, Markdown oder reiner Text; Word-, OpenDocument-, RTF- und Pages-Dateien lassen sich öffnen
+• Schriftgrößen und Abstände nach deinem Geschmack
+
+TABELLEN
+• Formeln mit rund 90 Funktionen wie SUMME, WENN, SVERWEIS, XVERWEIS, SUMMEWENNS oder ZÄHLENWENNS – mit deutschen oder englischen Namen
+• Rechnen mit Datum: 13.11.2026 eintippen, Tage bis zur Frist, Arbeitstage und Kalenderwochen ausrechnen
+• Anklickbare Links zu Webseiten und E-Mail-Adressen
+• Zeilen und Spalten fixieren; farbige Markierungen aus Excel bleiben erhalten
+• Drucken und PDF mit Seitenzahlen
+• Schriftgröße, Fett, Kursiv, Schriftfarbe und Hintergrundfarbe für Zellen
+• Sortieren, Ausfüllen, Summe per Knopfdruck, Zeilen und Spalten einfügen
+• Öffnet und speichert Excel (.xlsx, .xltx), OpenDocument (.ods) und CSV, liest Numbers-Tabellen
+• Export als PDF, HTML oder Markdown
+
+KLEIN UND SCHNELL
+Blatt ist bewusst schlank gebaut. Keine Werbung, keine Datensammlung, keine Anmeldung. Alles bleibt auf deinem Gerät oder in deinem iCloud Drive.
+
+Auf iPhone und iPad gibt es eine Formatleiste direkt über der Tastatur; auf dem Mac erreichst du alles auch per Kurzbefehl.
