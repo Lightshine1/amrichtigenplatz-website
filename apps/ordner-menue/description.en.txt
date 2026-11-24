@@ -27,4 +27,4 @@ Ordner-Menü works best with a decimal filing system: each level holds at most t
 LIGHTWEIGHT
 The app lives only in the menu bar, needs no internet, collects no data and shows no ads. It does not need Accessibility permissions.
 
-App language: German.
+Languages: English and German.

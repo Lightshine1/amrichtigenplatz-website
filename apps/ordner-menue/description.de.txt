@@ -27,4 +27,4 @@ Ordner-Menü passt am besten zu einer Ablage nach dem Dezimalsystem: Jede Ebene 
 SCHLANK
 Die App lebt nur in der Menüleiste, braucht kein Internet, sammelt keine Daten und zeigt keine Werbung. Zugriff auf die Bedienungshilfen braucht sie nicht.
 
-Sprache der App: Deutsch.
+Sprachen: Deutsch und Englisch.
