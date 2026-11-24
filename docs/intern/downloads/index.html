@@ -8,7 +8,7 @@ td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}tr.sum td{font-weig
 <body><h1>App-Downloads (kostenlos)</h1><p id="s">Lade Zahlen …</p><div id="out"></div>
 <p><small>Quelle: GitHub-Releases von Lightshine1/amrichtigenplatz-website. Gezählt wird jeder Abruf der Datei (auch abgebrochene oder wiederholte Downloads und Bots); die Zahl ist also ein Richtwert. Keine Cookies, keine Besucherdaten.</small></p>
 <script>
-const NAMES = {"battery-limit": "Battery Limit", "ssd-guard": "SSD Guard"};
+const NAMES = {"battery-limit": "Battery Limit", "ssd-guard": "SSD Guard", "ordner-menue": "Ordner-Menü"};
 fetch("https://api.github.com/repos/Lightshine1/amrichtigenplatz-website/releases?per_page=100").then(r => r.json()).then(rel => {
   const apps = {};
   for (const r of rel) {

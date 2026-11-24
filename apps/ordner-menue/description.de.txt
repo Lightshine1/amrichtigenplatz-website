@@ -1,0 +1,30 @@
+Wer seine Ordner nummeriert – 1 Firma, 15 Projekte, 156 Angebote –, kennt den Weg zu jedem Ordner auswendig. Ordner-Menü macht daraus eine Abkürzung: Tastenkürzel drücken, die Ziffern tippen, Return. Schon öffnet sich der Ordner im Finder, ohne Klicken durch lange Listen.
+
+SO FUNKTIONIERT ES
+• Ein Klick auf das Ordner-Symbol in der Menüleiste oder ein Tastenkürzel (Standard: ⌃ Leertaste) öffnet ein Fenster mit Spalten wie im Finder
+• Jede getippte Ziffer springt eine Ebene tiefer: 1, dann 5, dann 6 führt zu „1 … / 5 … / 6 …“
+• Buchstaben springen zum ersten passenden Ordnernamen, die Pfeiltasten funktionieren wie gewohnt
+• Return öffnet den gewählten Ordner im Finder, Esc schließt das Fenster
+• Es werden nur Ordner gezeigt; Aliasse und symbolische Links auf Ordner führen direkt ans Ziel
+• Änderungen an den Ordnern erscheinen sofort
+
+DATEIEN ABLEGEN
+• Dateien auf das Symbol in der Menüleiste ziehen, Zielordner mit Ziffern wählen, Return
+• Nach einer kurzen Rückfrage werden die Dateien verschoben – mit gedrückter Wahltaste (⌥) kopiert
+• Vorhandene Dateien werden nie überschrieben; gleichnamige erhalten eine Nummer
+
+EINSTELLBAR
+• Startordner: iCloud Drive oder ein beliebiger anderer Ordner
+• Welche Hauptordner erscheinen – standardmäßig die mit einer Ziffer vorne
+• Eigenes Tastenkürzel und Position des Fensters: am Symbol oder links, mittig oder rechts auf dem aktiven Bildschirm
+• Liste „Zuletzt benutzt“ mit 1 bis 10 Einträgen, auf Wunsch ausgeschaltet
+• Ablegen und Kopieren mit der Wahltaste lassen sich einzeln abschalten
+• Startet auf Wunsch bei der Anmeldung
+
+DAS DEZIMALE AKTENSYSTEM
+Ordner-Menü passt am besten zu einer Ablage nach dem Dezimalsystem: Jede Ebene hat höchstens zehn Ordner mit den Ziffern 0 bis 9. So ergibt jede Ziffernfolge genau einen Ordner, und schon drei Ziffern unterscheiden tausend Fächer. Ausführlich erklärt im Ratgeber „Ordner nummerieren nach dem Dezimalsystem“ auf dieser Website.
+
+SCHLANK
+Die App lebt nur in der Menüleiste, braucht kein Internet, sammelt keine Daten und zeigt keine Werbung. Zugriff auf die Bedienungshilfen braucht sie nicht.
+
+Sprache der App: Deutsch.

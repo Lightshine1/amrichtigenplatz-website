@@ -1,0 +1,42 @@
+{
+  "slug": "ordner-menue",
+  "name": "Ordner-Menü",
+  "category": "productivity",
+  "platforms": [
+    "mac"
+  ],
+  "appstore_url": null,
+  "price": {
+    "de": "Kostenlos",
+    "en": "Free"
+  },
+  "order": 5,
+  "privacy_updated": {
+    "de": "November 2026",
+    "en": "November 2026"
+  },
+  "download": {
+    "file": "Ordner-Menue-1.0.dmg",
+    "version": "1.0",
+    "requires": {
+      "de": "macOS 14 oder neuer, Apple-Chip oder Intel",
+      "en": "macOS 14 or later, Apple silicon or Intel"
+    },
+    "url": "https://github.com/Lightshine1/amrichtigenplatz-website/releases/download/ordner-menue-1.0/Ordner-Menue-1.0.dmg"
+  },
+  "de": {
+    "subtitle": "Mit Ziffern blitzschnell in jeden Ordner",
+    "promo": "Tastenkürzel drücken, 1 – 5 – 6 tippen, Return – und der Ordner ist offen. Für alle, die ihre Ablage nach dem Dezimalsystem nummerieren."
+  },
+  "en": {
+    "subtitle": "Jump into any folder by typing digits",
+    "promo": "Press the shortcut, type 1 – 5 – 6, hit Return – and the folder opens. For everyone who numbers their filing system the decimal way."
+  },
+  "screenshots": {
+    "mac": [
+      "macos-1-spalten",
+      "macos-2-ablegen",
+      "macos-3-einstellungen"
+    ]
+  }
+}
