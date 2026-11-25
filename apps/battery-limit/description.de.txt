@@ -25,6 +25,12 @@ AKKU-GESUNDHEIT
 • Zustand in Prozent der ursprünglichen Kapazität und Zahl der Ladezyklen
 • Monatlicher Verlauf als Diagramm
 
+ENERGIEVERBRAUCH PRO APP
+• Welche Apps in den letzten 6 oder 24 Stunden am meisten Energie gebraucht haben – als Balkendiagramm mit Akkuverlauf
+• Top 10 mit Anteil in Prozent, Hilfsprozesse zählen zur jeweiligen App, Systemdienste unter „macOS/System“
+• Wahlweise nur die Zeit im Akkubetrieb
+• Die Messung selbst braucht weit unter 0,1 % Akku pro Tag; die Werte bleiben 48 Stunden auf dem Mac
+
 Alles lässt sich in den Einstellungen einzeln ein- und ausschalten. Battery Limit braucht kein Internet, sammelt keine Daten und zeigt keine Werbung.
 
 Sprachen: Deutsch, Englisch, Französisch, Spanisch, Japanisch und Chinesisch (vereinfacht).

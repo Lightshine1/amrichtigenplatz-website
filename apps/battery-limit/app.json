@@ -16,13 +16,13 @@
     "en": "November 2026"
   },
   "download": {
-    "file": "BatteryLimit-1.1.dmg",
-    "version": "1.1",
+    "file": "BatteryLimit-1.2.dmg",
+    "version": "1.2",
     "requires": {
       "de": "MacBook mit Apple-Chip, macOS 26.4 oder neuer",
       "en": "MacBook with Apple silicon, macOS 26.4 or later"
     },
-    "url": "https://github.com/Lightshine1/amrichtigenplatz-website/releases/download/battery-limit-1.1/BatteryLimit-1.1.dmg"
+    "url": "https://github.com/Lightshine1/amrichtigenplatz-website/releases/download/battery-limit-1.2/BatteryLimit-1.2.dmg"
   },
   "de": {
     "subtitle": "Ladelimit für den MacBook-Akku",

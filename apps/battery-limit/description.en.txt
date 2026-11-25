@@ -25,6 +25,12 @@ BATTERY HEALTH
 • Condition as a percentage of the original capacity and number of charge cycles
 • Monthly history as a chart
 
+ENERGY USE PER APP
+• Which apps used the most energy in the last 6 or 24 hours – as a bar chart with the battery level
+• Top 10 with percentage; helper processes count towards their app, system services under "macOS/System"
+• Optionally only the time on battery
+• The measuring itself uses well below 0.1 % of the battery per day; the data stays on your Mac for 48 hours
+
 Every feature can be turned on or off in the settings. Battery Limit needs no internet connection, collects no data and shows no ads.
 
 Languages: English, German, French, Spanish, Japanese and Chinese (Simplified).
